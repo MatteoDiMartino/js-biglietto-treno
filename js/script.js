@@ -1,34 +1,30 @@
 // chiedo età
-
-    let ageUser = parseInt(prompt("dimmi la tua età"));
-    console.log (ageUser);
-
+    let ageUser = parseInt(prompt("Scrivi la tua età"));
+    console.log (ageUser)
 // chiedo km
-
-    let kmTravel = parseInt(prompt("dimmi i km che vuoi percorrere"));
-    console.log (kmTravel);
+    let lengthTravel = parseInt(prompt("Scrivi la lunghezza del tuo viaggio"));
+    console.log (lengthTravel)
+// definisco prezzo km
+    let priceOnlykm = 0.21;
 
 // calcolo prezzo
+    let totalPrice = (priceOnlykm * lengthTravel)
+    console.log (totalPrice)
 
-    let costKm = 0.21;
+// calcolo sconto 
+    let discount
+    if (ageUser<18) {
+        discount = totalPrice * 0.20; 
+    } else if (ageUser>65) {
+        discount = totalPrice * 0.40;
+    } else {
+        discount = totalPrice;
+    }
 
-    console.log (costKm);
+    console.log (discount)
 
+// costo finale
 
-    let totalTicket = (costKm * kmTravel);
-    console.log (totalTicket);
+    let finalPrice = (totalPrice - discount);
 
-// definisco sconti
-    let priceDiscount
-
-    if(ageUser < 18) {
-        priceDiscount = (totalTicket * 20 / 100);
-    } else if (ageUser > 65){
-       priceDiscount = (totalTicket * 40 / 100);
-    };
-
-    console.log (priceDiscount)
-
-
-    
-    
+    console.log (finalPrice)
